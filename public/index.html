@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Guess the Rent</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.sound.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="title">
+            <h1>💸Guess the Rent💰</h1>
+            <h4>NYC Apartment Market is full of fraud, can you guess the monthly rent based on the information? </h4>
+        </div>
+        <div class="apt">
+            <div class="apt_img">
+                <img src="https://cdn-img-feed.streeteasy.com/nyc/image/4/385340404.jpg" alt="1 Irving Place">
+            </div>
+            <div class="texts">
+                <div class="description">
+                    <p><b>Description: </b> Great closet space Zeckendorf Towers is a full-service luxury condominium with 24 hours doorman 
+                        </p>
+                        <p> <b>Location: </b>Union Square</p>
+                </div>
+                <div class="your_bid">
+                    <input type="text" name="fname" id ="user_name" placeholder="Your Name">
+                    <input type="text" name="guess" id ="user_guess" placeholder="Your Guess">
+                    <button id="myButton">Submit</button>
+                </div>
+                <div id="your_answer">
+                    <ul id="answer_list">
+                        <li id="guess_value"></li>
+                    </ul>
+                </div>
+
+                <div class="actual_answer" onclick="popping()">
+                   <p>Actual Rent <br> (Click after submitting your answer)</p>
+                   <span class="popuptext" id="myPopup">$3500</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="sketch.js"></script>
+</body>
+</html>
